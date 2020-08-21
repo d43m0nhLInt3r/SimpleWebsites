@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>websiteChanger</title>
+<script>
+ window.onload = function() {
+  progress();
+  
+   /*
+if (sessinStorage.getItem('s') == '') {
+      sessionStorage.setItem('s', 'true');
+document.getElementById('page').src = "page.html";
+      progress();
+} else if (sessinStorage.getItem('s') == 'true') {
+sessionStorage.setItem('s', 'true');
+document.getElementById('page').src = "page2.html";
+      progress();
+}
+else if (sessinStorage.getItem('s') == 'false') {
+sessionStorage.setItem('s', 'true');
+document.getElementById('page').src = page.html;
+      progress();
+}else  {
+sessionStorage.setItem('s', 'true');
+document.getElementById('page').src = "page.html";
+      progress();
+}*/
+}
+
+function progress() {
+    var reverse_counter = 30;
+var downloadTimer = setInterval(function(){
+  document.getElementById("pbar").value = 30 - --reverse_counter;
+  if(reverse_counter <= 0)
+    clearInterval(downloadTimer);
+},1000); 
+}
+  </script>
+
+<style>
+iframe {
+  display: block;
+  width: 100vw;
+  height: 98vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+overflow: hidden;
+  border: 0 none;
+  box-sizing: border-box;
+}
+body{
+margin-top: -7px;
+overflow: hidden;
+}
+</style>
+</head>
+<body>
+<div>
+<iframe id="page" src="https://getbootstrap.com/" ></iframe>
+</div>
+<progress value="0" style="width: 98vw;" max="30" id="pbar" ></progress>
+  
+  </div>
+
+</div>
+</body>
+</html>
